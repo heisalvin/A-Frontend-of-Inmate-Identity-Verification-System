@@ -20,6 +20,7 @@ export function EnrollInmate({ onNavigate }: EnrollInmateProps) {
   const [formData, setFormData] = useState({
     name: "",
     inmateId: "",
+    age: "", // Added age field
     crime: "",
     legalStatus: "",
     sentenceDuration: "",
@@ -56,6 +57,7 @@ export function EnrollInmate({ onNavigate }: EnrollInmateProps) {
       setFormData({
         name: "",
         inmateId: "",
+        age: "", // Reset age field
         crime: "",
         legalStatus: "",
         sentenceDuration: "",
@@ -76,7 +78,7 @@ export function EnrollInmate({ onNavigate }: EnrollInmateProps) {
               </div>
               <h3 className="text-xl font-semibold text-green-800">Inmate Enrolled Successfully!</h3>
               <p className="text-green-700">
-                {formData.name} has been successfully enrolled in the system.
+                {formData.name} (Age: {formData.age}) has been successfully enrolled in the system.
                 <br />
                 Inmate ID: <strong>{formData.inmateId}</strong>
                 <br />
@@ -136,6 +138,20 @@ export function EnrollInmate({ onNavigate }: EnrollInmateProps) {
                     onChange={(e) => handleInputChange("inmateId", e.target.value)}
                     placeholder="INM-2024-XXX"
                     required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="age">Age</Label>
+                  <Input
+                    id="age"
+                    type="number"
+                    value={formData.age}
+                    onChange={(e) => handleInputChange("age", e.target.value)}
+                    placeholder="Enter age"
+                    min="0"
                   />
                 </div>
               </div>

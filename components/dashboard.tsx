@@ -7,6 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { UserPlus, Camera, CheckCircle, XCircle, TrendingUp, Users } from "lucide-react"
 import type { Page } from "@/app/page"
 import { ActivityFeed } from "./activity-feed"
+import { AnalyticsDashboard } from "./analytics-dashboard" // Import the new component
 
 interface DashboardProps {
   onNavigate: (page: Page) => void
@@ -188,6 +189,9 @@ export function Dashboard({ onNavigate }: DashboardProps) {
           <ActivityFeed />
         </div>
       </div>
+
+      {/* Analytics Section */}
+      <AnalyticsDashboard />
     </div>
   )
 }

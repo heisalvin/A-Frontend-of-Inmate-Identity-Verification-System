@@ -24,6 +24,7 @@ export function InmateHistory({ onNavigate }: InmateHistoryProps) {
     totalVerifications: 47,
     successRate: "96.8%",
     imageUrl: "/images/inmate-placeholder.png", // This can be easily replaced with real photo
+    age: 35, // Added age field
   }
 
   const verificationHistory = [
@@ -181,6 +182,10 @@ export function InmateHistory({ onNavigate }: InmateHistoryProps) {
 
               {/* Detailed Information */}
               <div className="space-y-4 pt-4 border-t border-gray-100">
+                <div>
+                  <span className="text-sm font-medium text-gray-600">Age:</span>
+                  <p className="text-sm text-gray-900 mt-1">{inmateProfile.age} years old</p>
+                </div>
                 <div>
                   <span className="text-sm font-medium text-gray-600">Crime:</span>
                   <p className="text-sm text-gray-900 mt-1">{inmateProfile.crime}</p>
